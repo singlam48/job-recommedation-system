@@ -1,0 +1,121 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>RESUMEX</title>
+  </head>
+  <body>
+    <navbar>
+      <nav class="navbar navbar-expand-lg px-2">
+        <div class="nav-bg py-3 container-fluid rounded-4 shadow-sm">
+          <a class="navbar-brand" href="#">RESUMEX</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >About us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Support</a
+                >
+              </li>
+
+              <!-- <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li> -->
+            </ul>
+            <a
+              href="upload"
+              class="btn btn-outline-secondary mx-4 rounded-pill"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </nav>
+    </navbar>
+
+    <section>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="https://static.jobscan.co/blog/uploads/hero_scanner.png"
+              class="d-block mx-lg-auto img-fluid"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <div class="lc-block mb-3">
+              <div editable="rich">
+                <h2 class="fw-bold display-5">ResumeX</h2>
+              </div>
+            </div>
+
+            <div class="lc-block mb-3">
+              <div editable="rich">
+                <p class="lead">
+                  A tool that analyzes a job seeker's resume and compares the
+                  resume to a job listing to identify the skills the recruiter
+                  or hiring manager will be looking for based on the context of
+                  the job.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="lc-block d-grid gap-2 d-md-flex justify-content-md-start"
+            >
+              <a
+                class="btn btn-outline-secondary px-4"
+                href="upload"
+                role="button"
+                >Aanalyze My Resume</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+{% endblock %}

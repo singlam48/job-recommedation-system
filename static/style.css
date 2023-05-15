@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=DM+Sans:wght@400;700&family=Dela+Gothic+One&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,700&family=Londrina+Solid:wght@100;300;400&family=Marck+Script&family=Mukta:wght@700&family=PT+Sans:ital@0;1&family=Poppins:ital,wght@0,400;1,500&family=Press+Start+2P&family=Quicksand:wght@300;400&family=Raleway:wght@400;700&family=Roboto&display=swap");
+
+body {
+  background-color: rgb(241, 241, 241);
+  font-family: "DM Sans", sans-serif;
+}
+
+.nav-bg {
+  background: #ffffff;
+}
+.main_container {
+  margin-top: 5px;
+}
+
+.info_box {
+  height: 85vh;
+  margin: 5px 10px;
+  border-radius: 10px;
+  background: #e4d0ff;
+}
+.input_box {
+  height: 85vh;
+  margin: 5px 10px;
+  border-radius: 10px;
+
+  padding: 20px;
+}
+.result_box {
+  height: 85vh;
+  margin: 5px 10px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f8f8f8, #f7f1ff);
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result_div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #b87eff, #5704d3);
+  color: #ffffff;
+}
+#result_score {
+  background-color: #ab74ff;
+}

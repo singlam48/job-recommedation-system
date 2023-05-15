@@ -1,0 +1,158 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>RESUMEX</title>
+  </head>
+  <body>
+    <navbar>
+      <nav class="navbar navbar-expand-lg px-2">
+        <div class="nav-bg py-3 container-fluid rounded-4 shadow-sm">
+          <a class="navbar-brand" href="#">RESUMEX</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Support</a>
+              </li>
+            
+              <!-- <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li> -->
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+    </navbar>
+
+  
+
+    <div class="main_container container-fluid ">
+      <div class="row">
+        <div class="info_box col-md">
+          <h2 class="my-4 fw-bold">Instruction</h2>
+          <div class="container">
+            <div class="row w-100 bg-light p-2 rounded-2 my-2">
+              <p> A tool that analyzes a job seeker's resume and compares the resume to a job listing to identify the skills the recruiter or hiring manager will be looking for based on the context of the job. </p>
+           
+            </div>
+            <p class="my-3 fw-bold">Steps to follow</p>
+            
+            <div class="row w-100 bg-light p-2 rounded-2 my-2">
+             ⭐ Paste your job description
+            </div>
+            <div class="row w-100 bg-light p-2 rounded-2 my-2">
+             ⭐ Upload your resume in .docs
+            </div>
+            <div class="row w-100 bg-light p-2 rounded-2 my-2">
+             ⭐ Generate result
+            </div>
+           
+          </div>
+        </div>
+
+
+        <div class="input_box col-md-6 px-4">
+          <!-- <h2 class="my-4 fw-bold text-light">Get Started</h2> -->
+
+          <form  action="data" , method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <!-- Email INPUT -->
+          
+            <!-- JD INPUT -->
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Enter Job Description</label
+              >
+              <textarea
+                class="form-control shadow-lg"
+                name="jd"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <!-- resume INPUT -->
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Upload your resume in .docs</label
+              >
+              <input
+              type="file"
+                class="form-control shadow-lg p-4"
+                name="resume"
+                id="exampleFormControlTextarea1"
+                required
+                rows="3"
+              ></input>
+            </div>
+             <input type="submit" value="Get result" class="btn btn-light shadow-lg"></input>
+          </form>
+        </div>
+
+
+        <div class="result_box col-md shadow-sm">
+          <h2 class="my-4 fw-bold">Result</h2>
+         <div class=" result-container container">
+            <div class=" result_div row  bg-primary p-2 my-2">
+             {{result}}%
+            </div>
+             <div class="row w-100 bg-light p-2 rounded-2 mt-5 shadow-lg">
+              <p>  Your Resume matches {{result}}% with given job description </p>
+            </div>
+             <div class="row w-100 bg-light p-2 rounded-2 mt-2 shadow-lg">
+             <span> > 90% - Excellent Resume</span>
+             <span> > 60% to 90% - Good to go Resume</span>
+             <span> > 40% to 60% - Need Improvement </span>
+             <span> > 40% - Less chance for interview </span>
+            </div>
+
+            
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+</html>
+
+{% endblock %}

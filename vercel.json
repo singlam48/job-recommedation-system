@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "resumescanner/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "resumescanner/wsgi.py"
+    }
+  ]
+}
